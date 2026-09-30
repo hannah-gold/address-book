@@ -4,18 +4,18 @@
 
 Open 2 terminals
 
-Terminal 1:
+###Terminal 1:
 
-cd address-book/backend
+`cd address-book/backend`
 
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-uvicorn main:app --reload
+`uvicorn main:app --reload`
 
-Terminal 2: 
+###Terminal 2: 
 
-cd address-book/frontend
+`cd address-book/frontend`
 
-npm install
+`npm install`
 
-npm run dev
+`npm run dev`
