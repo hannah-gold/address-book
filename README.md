@@ -2,9 +2,9 @@
 
 ## To Run It
 
-Open 2 terminals
+### Open 2 terminals
 
-###Terminal 1:
+#### Terminal 1:
 
 `cd address-book/backend`
 
@@ -12,7 +12,7 @@ Open 2 terminals
 
 `uvicorn main:app --reload`
 
-###Terminal 2: 
+#### Terminal 2: 
 
 `cd address-book/frontend`
 
