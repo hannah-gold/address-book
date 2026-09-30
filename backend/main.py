@@ -12,13 +12,17 @@ from sqlalchemy.orm import declarative_base, sessionmaker, Session
 # Database
 # -------------------------
 
+# Connect to SQLite (Use a SQLite database stored in the file address_book.db)
 DATABASE_URL = "sqlite:///./address_book.db"
 
+# SQLAlchemy's connection interface to the database
 engine = create_engine(
     DATABASE_URL,
     connect_args={"check_same_thread": False}
 )
 
+# Working convo between Python code and the database
+# ie. db.add(contact), db.commit(), db.query(Contact)
 SessionLocal = sessionmaker(
     autocommit=False,
     autoflush=False,
@@ -32,6 +36,8 @@ Base = declarative_base()
 # Database model
 # -------------------------
 
+# Tells SQLAlchemy what the SQLite table should look like
+# SQLAlchemy model defines how the data is stored in the database
 class Contact(Base):
     __tablename__ = "contacts"
 
@@ -53,6 +59,7 @@ Base.metadata.create_all(bind=engine)
 # Pydantic models
 # -------------------------
 
+# Pydantic model defines what data the API accepts or returns
 class ContactCreate(BaseModel):
     name: str = Field(min_length=1, max_length=100)
     email: EmailStr
