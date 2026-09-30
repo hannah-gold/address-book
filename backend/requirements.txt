@@ -1,4 +1,17 @@
+##List of the Python packages the backend depends on
+
+#Creates API 
+#Ex. main.py app.get or app/post figures out which Python function should
+#handle each HTTP request
 fastapi
+
+#Server that runs the FastAPI application
+# "Start a web server and serve the FastAPI object called app inside main.py"
 uvicorn[standard]
+
+#How the Python backend communicates with SQLite (ORM -> Object Relational Mapper)
 sqlalchemy
+
+#Structure and validation of API data
+# ie. catches invalid email syntax before we put bad data into the database
 pydantic[email]
